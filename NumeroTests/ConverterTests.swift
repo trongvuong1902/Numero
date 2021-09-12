@@ -24,6 +24,27 @@
 /// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-/// THE SOFTWARE.
+/// THE SOFTWARE.   
 
+import XCTest
+@testable import Numero
+
+class ConverterTests: XCTestCase {
+  var converter: Converter!
+
+  override func setUp() {
+    super.setUp()
+    converter = Converter()
+  }
+
+  override func tearDown() {
+    converter = nil
+    super.tearDown()
+  }
+
+  func testConversionForOne() {
+    let result = converter.convert(1)
+    XCTAssertEqual(result, "I", "Conversion for 1 is incorrect")
+  }
+}
 
